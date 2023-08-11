@@ -1,42 +1,26 @@
-public class Game extends Gibbet{
-    Scanner sc = new Scanner(System.in);
+import java.util.Scanner;
 
-    System.out.print("Wymyśl słowo: ");
-    String haslo = sc.nextLine();
-    char[] chars = haslo.toCharArray();
-        System.out.print("Zgadnij słowo: ");
+public class Game extends Gibbet {
+    Scanner scanner = new Scanner(System.in);
 
-    char[] ukryteHaslo = new char[haslo.length()];
-
-        for(int i = 0; i < haslo.length(); i++){
-        ukryteHaslo[i] = '_';
-    }
-
-        for(int i = 0; i < haslo.length(); i++){
-        System.out.print(ukryteHaslo[i]);
-    }
-
-        System.out.println(" Ilość liter: " + haslo.length());
-        System.out.println();
-
-        System.out.print("zgadnij litere: ");
-    char guess = sc.next().charAt(0);
-
-
-        System.out.println();
-
-
+        public void porownanie (char[] chars, char[] ukryteHaslo, String haslo){
             for (int i = 0; i < chars.length; i++) {
-        if (chars[i] == guess) {
-            System.out.println("Brawo, trafiłeś!");
-            chars[i] = ' ';
-            gibbet.printHang1();
-            System.out.println();
-            ukryteHaslo[i] = guess;
-            for(int j = 0; j < haslo.length(); j++){
-                System.out.print(ukryteHaslo[j]);
+                if (chars[i] == guess()) {
+                    System.out.println("Brawo, trafiłeś!");
+                    chars[i] = ' ';
+                    printHang2();
+                    System.out.println();
+                    ukryteHaslo[i] = guess();
+                    for (int j = 0; j < haslo.length(); j++) {
+                        System.out.print(ukryteHaslo[j]);
+                    }
+                    break;
+                }
             }
-            break;
         }
+    public char guess() {
+        System.out.print("zgadnij litere: ");
+        char guess = scanner.next().charAt(0);
+        return guess;
     }
 }

@@ -1,4 +1,7 @@
 public class Gibbet {
+
+
+
     public static void printHang1(){
         System.out.println("                 ");
         System.out.println("                  ");
