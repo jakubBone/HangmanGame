@@ -20,7 +20,7 @@ public class HangmanTest {
 
         System.out.print("Come up with a word: ");
         String word = sc.nextLine();
-        char[] chars = word.toCharArray();
+        char[] wordInTable = word.toCharArray();
         char[] hidenWord = new char[word.length()];
         for (int i = 0; i < word.length(); i++) {
             hidenWord[i] = '_';
@@ -32,11 +32,17 @@ public class HangmanTest {
         }
 
 
-        System.out.println("Number of letters: " + word.length());
+        System.out.println(" Number of letters: " + word.length());
         System.out.println();
+        game.compare(wordInTable, hidenWord, word, word.length());
 
-        game.guess();
-        game.compare(chars, hidenWord, word);
+        /*while(){
+            char userGuess = game.guessTheLetter();
+            game.compare(userGuess,wordInTable, hidenWord, word);
+        }*/
+
+        /*char userGuess = game.guessTheLetter();
+        game.compare(userGuess,wordInTable, hidenWord, word);*/
 
         }
     }
