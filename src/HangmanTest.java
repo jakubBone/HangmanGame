@@ -16,28 +16,28 @@ public class HangmanTest {
                 System.out.print(Gibbet.gibbet[i][j]);
             }
         }
+        System.out.println();
 
-        /*
-        System.out.print("Wymyśl słowo: ");
-        String haslo = sc.nextLine();
-        char[] chars = haslo.toCharArray();
-        char[] ukryteHaslo = new char[haslo.length()];
-        for (int i = 0; i < haslo.length(); i++) {
-            ukryteHaslo[i] = '_';
+        System.out.print("Come up with a word: ");
+        String word = sc.nextLine();
+        char[] chars = word.toCharArray();
+        char[] hidenWord = new char[word.length()];
+        for (int i = 0; i < word.length(); i++) {
+            hidenWord[i] = '_';
         }
-        System.out.print("Słowo do zgadnięcia: ");
+        System.out.print("Word to guess: ");
 
-        for (int i = 0; i < haslo.length(); i++) {
-            System.out.print(ukryteHaslo[i]);
+        for (int i = 0; i < word.length(); i++) {
+            System.out.print(hidenWord[i]);
         }
 
 
-        System.out.println(" Ilość liter: " + haslo.length());
+        System.out.println("Number of letters: " + word.length());
         System.out.println();
 
         game.guess();
-        game.porownanie(chars, ukryteHaslo, haslo);
-*/
+        game.compare(chars, hidenWord, word);
+
         }
     }
 
