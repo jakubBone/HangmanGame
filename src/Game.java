@@ -8,7 +8,6 @@ public class Game extends Gibbet {
                 if (chars[i] == guess()) {
                     System.out.println("Brawo, trafiłeś!");
                     chars[i] = ' ';
-                    printHang2();
                     System.out.println();
                     ukryteHaslo[i] = guess();
                     for (int j = 0; j < haslo.length(); j++) {

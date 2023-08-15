@@ -8,6 +8,15 @@ public class HangmanTest {
         Game game = new Game();
         Scanner sc = new Scanner(System.in);
 
+        Gibbet.makeGibbet();
+
+        for(int i = 0; i < 18 ; i++){
+            for (int j = 0; j < 9; j++) {
+                System.out.println(Gibbet.gibbet[i][j]);
+            }
+        }
+
+        /*
         System.out.print("Wymyśl słowo: ");
         String haslo = sc.nextLine();
         char[] chars = haslo.toCharArray();
@@ -27,7 +36,7 @@ public class HangmanTest {
 
         game.guess();
         game.porownanie(chars, ukryteHaslo, haslo);
-
+*/
         }
     }
 
