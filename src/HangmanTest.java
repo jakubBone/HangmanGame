@@ -10,9 +10,10 @@ public class HangmanTest {
 
         Gibbet.makeGibbet();
 
-        for(int i = 0; i < 18 ; i++){
-            for (int j = 0; j < 9; j++) {
-                System.out.println(Gibbet.gibbet[i][j]);
+        for(int i = 0; i < 9 ; i++){
+            System.out.println();
+            for (int j = 0; j < 18; j++) {
+                System.out.print(Gibbet.gibbet[i][j]);
             }
         }
 
