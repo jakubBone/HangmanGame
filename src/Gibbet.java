@@ -1,45 +1,60 @@
 public class Gibbet {
     public static String[][] gibbet = new String[9][18];
-
-    public static void makeGibbet() {
-        // zero step
+    public static int gibbetPartsCounter = 0;
+    public static void makeEmptyGibbet() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 18; j++) {
                 gibbet[i][j] = " ";
             }
         }
-
-        // first step
-        gibbet[8][0] = "/";
-        // second step
-        gibbet[8][2] = "\\";
-        // third step
-        for(int i = 1; i < 8; i++){
-            gibbet[i][1] = "|";
-        }
-        //fourth step
-        for(int i = 1; i < 17; i++){
-            gibbet[0][i] = "-";
-        }
-        //fifth step
-        gibbet[1][2] = "/";
-        //sixth step
-            gibbet[1][16] = "|";
-            gibbet[2][16] = "|";
-        //seventh step
-        gibbet[3][16] = "0";
-        //eihth
-        gibbet[4][16] = "|";
-        gibbet[5][16] = "|";
-        //ninth
-        gibbet[4][15] = "/";
-        //tenth
-        gibbet[4][17] = "\\";
-        //eleventh
-        gibbet[6][15] = "/";
-        //twelvth
-        gibbet[6][17] = "\\";
     }
+
+    public static void buildGibbet(){
+
+        switch (gibbetPartsCounter){
+            case 0:
+                gibbet[8][0] = "/";
+                break;
+            case 1:
+                gibbet[8][2] = "\\";
+                break;
+            case 2:
+                for(int i = 1; i < 8; i++){
+                gibbet[i][1] = "|";
+                }
+                break;
+            case 3:
+                for(int i = 1; i < 17; i++){
+                gibbet[0][i] = "-";
+                }
+                break;
+            case 4:
+                gibbet[1][2] = "/";
+                break;
+            case 5:
+                gibbet[1][16] = "|";
+                gibbet[2][16] = "|";
+                break;
+            case 6:
+                gibbet[3][16] = "0";
+                break;
+            case 7:
+                gibbet[4][16] = "|";
+                gibbet[5][16] = "|";
+                break;
+            case 8:
+                gibbet[4][15] = "/";
+                break;
+            case 9:
+                gibbet[4][17] = "\\";
+                break;
+            case 10:
+                gibbet[6][15] = "/";
+                break;
+            case 11:
+                gibbet[6][17] = "\\";
+                break;
+        }
 
         public static void printHang13 () {
             System.out.println(" ---------------");

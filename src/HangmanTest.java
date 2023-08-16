@@ -8,7 +8,7 @@ public class HangmanTest {
         Game game = new Game();
         Scanner sc = new Scanner(System.in);
 
-        Gibbet.makeGibbet();
+        Gibbet.makeEmptyGibbet();
 
         for(int i = 0; i < 9 ; i++){
             System.out.println();
