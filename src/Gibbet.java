@@ -9,9 +9,9 @@ public class Gibbet {
         }
     }
 
-    public static void buildGibbet(){
+    public static void buildGibbet() {
 
-        switch (gibbetPartsCounter){
+        switch (gibbetPartsCounter) {
             case 0:
                 gibbet[8][0] = "/";
                 break;
@@ -19,13 +19,13 @@ public class Gibbet {
                 gibbet[8][2] = "\\";
                 break;
             case 2:
-                for(int i = 1; i < 8; i++){
-                gibbet[i][1] = "|";
+                for (int i = 1; i < 8; i++) {
+                    gibbet[i][1] = "|";
                 }
                 break;
             case 3:
-                for(int i = 1; i < 17; i++){
-                gibbet[0][i] = "-";
+                for (int i = 1; i < 17; i++) {
+                    gibbet[0][i] = "-";
                 }
                 break;
             case 4:
@@ -55,7 +55,7 @@ public class Gibbet {
                 gibbet[6][17] = "\\";
                 break;
         }
-
+    }
         public static void printHang13 () {
             System.out.println(" ---------------");
             System.out.println(" |/             |");
