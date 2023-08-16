@@ -9,7 +9,7 @@ public class Gibbet {
         }
     }
 
-    public static void buildGibbet() {
+    public static void printGibbet() {
 
         switch (gibbetPartsCounter) {
             case 0:
