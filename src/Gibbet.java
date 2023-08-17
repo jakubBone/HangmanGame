@@ -15,6 +15,7 @@ public class Gibbet {
                 System.out.print(gibbet[i][j]);
             }
         }
+        System.out.println();
     }
 
     public static void buildGibbet() {

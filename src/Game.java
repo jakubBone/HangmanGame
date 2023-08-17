@@ -6,14 +6,16 @@ public class Game extends Gibbet {
     public static char[] wordInTable;
     public static char[] hidenWord;
 
-    public static char [] completedWord;
+    public static int counter;
+
+    public static boolean ifGameContinue = true;
+
 
     public void askForWord() {
         System.out.print("Come up with a word: ");
         word = scanner.nextLine();
         wordInTable = word.toCharArray();
         hidenWord = new char[word.length()];
-        completedWord = new char[word.length()];
         for (int i = 0; i < word.length(); i++) {
             hidenWord[i] = '_';
         }
@@ -32,18 +34,32 @@ public class Game extends Gibbet {
                     if (wordInTable[i] == userGuess) {
                         wordInTable[i] = ' ';
                         hidenWord[i] = userGuess;
-                        completedWord[i] = userGuess;
                         hit = true;
                     }
                 }
-            if(hit)
-                System.out.println("Congratulation, you hit the letter!");
+            if(hit) {
+                counter++;
+                if(counter < word.length())
+                    System.out.println("Congratulation, you hit the letter!");
+                else {
+                    System.out.println("You win!!");
+                    ifGameContinue = false;
+                }
+            }
             else {
-                System.out.println("You missed");
-                Gibbet.buildGibbet();
-                Gibbet.gibbetPartsCounter++;
+                if(gibbetPartsCounter < 11) {
+                    System.out.println("You missed");
+                    Gibbet.buildGibbet();
+                    gibbetPartsCounter++;
+                }
+                else {
+                    System.out.println("Gibbet full, you lost!");
+                    ifGameContinue = false;
+                }
+
             }
         }
+
 
     public char guessTheLetter() {
             System.out.print("Guess the letter: ");

@@ -14,22 +14,14 @@ public class HangmanTest {
         System.out.println();
         game.askForWord();
 
-        boolean ifGameContinues = true;
 
-        while(ifGameContinues){
+        while(Game.ifGameContinue){
+            gibbet.printEmptyGibbet();
             game.checkGuess();
-            System.out.println(Game.hidenWord);
-                if(Gibbet.gibbetPartsCounter > 11 || Game.hidenWord == Game.completedWord){
-                    if(Game.gibbetPartsCounter > 11) {
-                        System.out.println("Gibbet full, you lost!");
-                        ifGameContinues = false;
-                    }
-                    else if (Game.hidenWord == Game.completedWord) {
-                        System.out.println("You win!!");
-                        ifGameContinues = false;
+                    System.out.println(Game.hidenWord);
+                    gibbet.printEmptyGibbet();
+                    System.out.println(Game.hidenWord);
                     }
                 }
             }
-        }
-    }
 
