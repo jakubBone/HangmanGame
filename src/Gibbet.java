@@ -1,15 +1,23 @@
 public class Gibbet {
     public static String[][] gibbet = new String[9][18];
     public static int gibbetPartsCounter = 0;
-    public static void makeEmptyGibbet() {
+    public void makeEmptyGibbet() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 18; j++) {
                 gibbet[i][j] = " ";
             }
         }
     }
+    public void printEmptyGibbet(){
+        for(int i = 0; i < 9 ; i++){
+            System.out.println();
+            for (int j = 0; j < 18; j++) {
+                System.out.print(gibbet[i][j]);
+            }
+        }
+    }
 
-    public static void printGibbet() {
+    public static void buildGibbet() {
 
         switch (gibbetPartsCounter) {
             case 0:

@@ -1,50 +1,53 @@
 import java.util.Scanner;
 
 public class Game extends Gibbet {
-
     Scanner scanner = new Scanner(System.in);
+    public static String word;
+    public static char[] wordInTable;
+    public static char[] hidenWord;
 
-        public void compare(char[] wordInTable, char[] hiddenWord, String word, int wordLength) {
+    public static char [] completedWord;
+
+    public void askForWord() {
+        System.out.print("Come up with a word: ");
+        word = scanner.nextLine();
+        wordInTable = word.toCharArray();
+        hidenWord = new char[word.length()];
+        completedWord = new char[word.length()];
+        for (int i = 0; i < word.length(); i++) {
+            hidenWord[i] = '_';
+        }
+        System.out.print("Word to guess: ");
+        for (int i = 0; i < word.length(); i++) {
+            System.out.print(hidenWord[i]);
+        }
+        System.out.println(" Number of letters: " + word.length());
+        System.out.println();
+    }
+
+        public void checkGuess() {
+            boolean hit = false;
             char userGuess = guessTheLetter();
-            boolean ifUserMissed = true;
-            //boolean ifGameContinue = true;
-            while (true) {
                 for (int i = 0; i < wordInTable.length; i++) {
-                    if (wordInTable[i] == userGuess)
+                    if (wordInTable[i] == userGuess) {
                         wordInTable[i] = ' ';
-                        hiddenWord[i] = userGuess;
-                        ifUserMissed = false;
-                    }
-                    if (ifUserMissed == false) {
-                        System.out.println("Good job!");
-                        for (int j = 0; j < wordLength; j++) {
-                            System.out.println(hiddenWord[j]);
-                        }
-                    }
-                    else{
-                        System.out.println("You missed");
-                        Gibbet.printGibbet();
-                        Gibbet.gibbetPartsCounter++;
-                    }
-                    if(hiddenWord == wordInTable) {
-                        System.out.println("You won!");
-                        break;
-                    }
-                    else if (gibbetPartsCounter == 11) {
-                        System.out.println("You lost!");
-                        break;
+                        hidenWord[i] = userGuess;
+                        completedWord[i] = userGuess;
+                        hit = true;
                     }
                 }
+            if(hit)
+                System.out.println("Congratulation, you hit the letter!");
+            else {
+                System.out.println("You missed");
+                Gibbet.buildGibbet();
+                Gibbet.gibbetPartsCounter++;
             }
+        }
 
-
-
-                   /* System.out.println("congratulations! You won");
-                else if (Gibbet.gibbetPartsCounter == 11)
-                    System.out.println("Game over, you lost");*/
     public char guessTheLetter() {
-        System.out.print("Guess the letter: ");
-        char guess = scanner.next().charAt(0);
-        return guess;
+            System.out.print("Guess the letter: ");
+            char guess = scanner.next().charAt(0);
+            return guess;
+        }
     }
-}
