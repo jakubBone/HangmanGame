@@ -4,7 +4,7 @@ public class Game extends Gibbet {
     Scanner scanner = new Scanner(System.in);
     public static String word;
     public static char[] wordInTable;
-    public static char[] hidenWord;
+    public static char[] hiddenWord;
 
     public static int counter;
 
@@ -15,13 +15,13 @@ public class Game extends Gibbet {
         System.out.print("Come up with a word: ");
         word = scanner.nextLine();
         wordInTable = word.toCharArray();
-        hidenWord = new char[word.length()];
+        hiddenWord = new char[word.length()];
         for (int i = 0; i < word.length(); i++) {
-            hidenWord[i] = '_';
+            hiddenWord[i] = '_';
         }
         System.out.print("Word to guess: ");
         for (int i = 0; i < word.length(); i++) {
-            System.out.print(hidenWord[i]);
+            System.out.print(hiddenWord[i]);
         }
         System.out.println(" Number of letters: " + word.length());
         System.out.println();
@@ -33,34 +33,34 @@ public class Game extends Gibbet {
                 for (int i = 0; i < wordInTable.length; i++) {
                     if (wordInTable[i] == userGuess) {
                         wordInTable[i] = ' ';
-                        hidenWord[i] = userGuess;
+                        hiddenWord[i] = userGuess;
                         hit = true;
                     }
                 }
+            System.out.println("Actual state of word: " + String.valueOf(Game.hiddenWord));
             if(hit) {
                 counter++;
                 if(counter < word.length())
                     System.out.println("Congratulation, you hit the letter!");
                 else {
-                    System.out.println("Great! You win!");
+                    System.out.println("Great! You won!");
                     ifGameContinue = false;
                 }
             }
             else {
-                if(gibbetPartsCounter < 11) {
+                if(gibbetElementsCounter < 11) {
                     System.out.print("You missed! The gibbet is being formed: ");
-                    Gibbet.buildGibbet();
-                    Gibbet.printEmptyGibbet();
-                    gibbetPartsCounter++;
+                    Gibbet.buildAndPrintGibbet();
+                    gibbetElementsCounter++;
                 }
                 else {
+                    Gibbet.buildAndPrintGibbet();
                     System.out.println("Gibbet is completed... You lost :( !");
                     ifGameContinue = false;
                 }
 
             }
         }
-
 
     public char guessTheLetter() {
             System.out.print("Guess the letter: ");

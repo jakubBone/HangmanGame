@@ -1,14 +1,21 @@
 public class Gibbet {
     public static String[][] gibbet = new String[9][18];
-    public static int gibbetPartsCounter = 0;
-    public void makeEmptyGibbet() {
+    public static int gibbetElementsCounter = 0;
+    public void createEmptyGibbet() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 18; j++) {
                 gibbet[i][j] = " ";
             }
         }
     }
-    public static void printEmptyGibbet(){
+
+    public static void buildAndPrintGibbet(){
+        Gibbet.buildGibbet();
+        Gibbet.printGibbet();
+        System.out.println("-----------------");
+    }
+
+    public static void printGibbet(){
         for(int i = 0; i < 9 ; i++){
             System.out.println();
             for (int j = 0; j < 18; j++) {
@@ -20,7 +27,7 @@ public class Gibbet {
 
     public static void buildGibbet() {
 
-        switch (gibbetPartsCounter) {
+        switch (gibbetElementsCounter) {
             case 0:
                 gibbet[8][0] = "/";
                 break;
@@ -34,7 +41,7 @@ public class Gibbet {
                 break;
             case 3:
                 for (int i = 1; i < 17; i++) {
-                    gibbet[0][i] = "-";
+                    gibbet[0][i] = "_";
                 }
                 break;
             case 4:
@@ -65,164 +72,4 @@ public class Gibbet {
                 break;
         }
     }
-        public static void printHang13 () {
-            System.out.println(" ---------------");
-            System.out.println(" |/             |");
-            System.out.println(" |              |");
-            System.out.println(" |              O");
-            System.out.println(" |             /|\\");
-            System.out.println(" |              |");
-            System.out.println(" |             / \\");
-            System.out.println(" |              ");
-            System.out.println("/ \\               ");
-        }
-
-        public static void printHang0 () {
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-        }
-
-
-        public static void printHang1 () {
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("/                 ");
-        }
-
-        public static void printHang2 () {
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("                  ");
-            System.out.println("/ \\              ");
-        }
-        public static void printHang3 () {
-            System.out.println("                 ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println("/ \\              ");
-        }
-
-        public static void printHang4 () {
-            System.out.println(" ----------------");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println("/ \\              ");
-        }
-        public static void printHang5 () {
-            System.out.println(" ---------------");
-            System.out.println(" |/              ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println("/ \\             ");
-        }
-        public static void printHang6 () {
-            System.out.println(" ---------------");
-            System.out.println(" |/             |");
-            System.out.println(" |              |");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println("/ \\                ");
-        }
-        public static void printHang7 () {
-            System.out.println(" ---------------");
-            System.out.println(" |/             |");
-            System.out.println(" |              |");
-            System.out.println(" |              O");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println("/ \\                ");
-        }
-        public static void printHang8 () {
-            System.out.println(" ---------------");
-            System.out.println(" |/             |");
-            System.out.println(" |              |");
-            System.out.println(" |              O");
-            System.out.println(" |              |");
-            System.out.println(" |              |");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println("/ \\                ");
-        }
-        public static void printHang9 () {
-            System.out.println(" ---------------");
-            System.out.println(" |/              |");
-            System.out.println(" |              |");
-            System.out.println(" |              O");
-            System.out.println(" |              |\\");
-            System.out.println(" |              |");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println("/ \\                ");
-        }
-        public static void printHang10 () {
-            System.out.println(" ---------------");
-            System.out.println(" |/             |");
-            System.out.println(" |              |");
-            System.out.println(" |              O");
-            System.out.println(" |              |\\");
-            System.out.println(" |              |");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println("/ \\                ");
-        }
-        public static void printHang11 () {
-            System.out.println(" ---------------");
-            System.out.println(" |/             |");
-            System.out.println(" |              |");
-            System.out.println(" |              O");
-            System.out.println(" |             /|\\");
-            System.out.println(" |              |");
-            System.out.println(" |               ");
-            System.out.println(" |               ");
-            System.out.println("/ \\                ");
-        }
-        public static void printHang12 () {
-            System.out.println(" ---------------");
-            System.out.println(" |/             |");
-            System.out.println(" |              |");
-            System.out.println(" |              O");
-            System.out.println(" |             /|\\");
-            System.out.println(" |              |");
-            System.out.println(" |               \\");
-            System.out.println(" |               ");
-            System.out.println("/ \\                ");
-        }
-
-    }
+}
