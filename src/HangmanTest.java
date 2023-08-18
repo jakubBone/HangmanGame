@@ -15,9 +15,8 @@ public class HangmanTest {
 
 
         while(Game.ifGameContinue){
-            game.checkGuess();
-                    System.out.println();
-                    }
-                }
-            }
-
+                game.checkGuess();
+                System.out.println();
+        }
+    }
+}
