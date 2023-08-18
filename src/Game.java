@@ -42,18 +42,19 @@ public class Game extends Gibbet {
                 if(counter < word.length())
                     System.out.println("Congratulation, you hit the letter!");
                 else {
-                    System.out.println("You win!!");
+                    System.out.println("Great! You win!");
                     ifGameContinue = false;
                 }
             }
             else {
                 if(gibbetPartsCounter < 11) {
-                    System.out.println("You missed");
+                    System.out.print("You missed! The gibbet is being formed: ");
                     Gibbet.buildGibbet();
+                    Gibbet.printEmptyGibbet();
                     gibbetPartsCounter++;
                 }
                 else {
-                    System.out.println("Gibbet full, you lost!");
+                    System.out.println("Gibbet is completed... You lost :( !");
                     ifGameContinue = false;
                 }
 

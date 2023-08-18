@@ -8,7 +8,7 @@ public class Gibbet {
             }
         }
     }
-    public void printEmptyGibbet(){
+    public static void printEmptyGibbet(){
         for(int i = 0; i < 9 ; i++){
             System.out.println();
             for (int j = 0; j < 18; j++) {

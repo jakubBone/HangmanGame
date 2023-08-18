@@ -10,17 +10,15 @@ public class HangmanTest {
         Scanner sc = new Scanner(System.in);
 
         gibbet.makeEmptyGibbet();
-        gibbet.printEmptyGibbet();
+        //gibbet.printEmptyGibbet();
         System.out.println();
         game.askForWord();
 
 
         while(Game.ifGameContinue){
-            gibbet.printEmptyGibbet();
             game.checkGuess();
-                    System.out.println(Game.hidenWord);
-                    gibbet.printEmptyGibbet();
-                    System.out.println(Game.hidenWord);
+                    System.out.println("Actual state of word: " + String.valueOf(Game.hidenWord));
+                    System.out.println();
                     }
                 }
             }
