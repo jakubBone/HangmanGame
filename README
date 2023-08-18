@@ -1,4 +1,4 @@
-#Hangman Console Game - README
+# Hangman Console Game - README
 
 ## Welcome to the Hangman Console Game! 
 
@@ -17,9 +17,9 @@ java Hangman
 Play! Try to guess the hidden word by entering single letters. You have a limited number of errors, so choose wisely.
 
 ## Game Rules
-The first user enter the word. 
-The second user try to guess the word by inputting only single letters.  
-If letter that is not in the word, the the gibbet starts to build. 
+The first user enters the word. 
+The second user tries to guess the word by inputting only single letters.  
+If the letter is not in the word, then the gibbet starts to build. 
 If you make too many errors, the gibbet figure will be completed, and the game will end.
 
 ## Requirements
