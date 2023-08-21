@@ -2,7 +2,7 @@
 
 ## Welcome to the Hangman Console Game! 
 
-This is a classic word guessing game where your goal is to guess the hidden word within a limited number of attempts. 
+This is a classic word-guessing game where your goal is to guess the hidden word within a limited number of attempts. 
 Be careful, making too many incorrect guesses will lead to the completion of the hangman figure and the end of the game.
 
 ## How to Play
@@ -21,7 +21,7 @@ Play! Try to guess the hidden word by entering single letters. There is a limite
 ## Game Rules
 The first user enters a word.
 The second user tries to guess the word by entering an input of only single letters.
-If the word doesn't contain the letter, a gibbet will start to create. The game will end when user guess whole word or the gibbet will be completed.
+If the word doesn't contain the letter, a gibbet will start to create. The game will end when the user guesses the whole word or the gibbet will be completed.
 
 ## Requirements
 To compile and run the game, you'll need Java Development Kit (JDK)
